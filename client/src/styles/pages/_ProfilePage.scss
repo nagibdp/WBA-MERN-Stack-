@@ -1,0 +1,32 @@
+@use "../mixins";
+@use "../variables";
+
+.profileCont {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+
+  &__divTitle {
+    position: relative;
+    height: 11%;
+    margin: 0;
+  }
+
+  &__divMain {
+    position: relative;
+    height: 80%;
+    .aContainer {
+      margin: 0 0 0rem 0;
+      padding: 3rem 0 0 0;
+      &__divText {
+        text-align: center;
+        padding: 0;
+      }
+    }
+    .buttonsCont {
+      margin-top: 2rem;
+    }
+  }
+}

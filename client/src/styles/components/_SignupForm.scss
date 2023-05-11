@@ -1,0 +1,127 @@
+@use "../mixins";
+@use "../variables";
+
+.divRight__formUp {
+  z-index: 5;
+  flex-grow: 6;
+  position: relative;
+  padding-top: 10rem;
+  padding-bottom: 2rem;
+  @include mixins.flexItem(column, wrap);
+
+  &--inputs {
+    margin: 3rem;
+    @include mixins.flexItem(column, wrap);
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-grow: 1;
+
+    div {
+      top: 0.5rem;
+      position: relative;
+      display: flex;
+
+      label {
+        position: relative;
+        font-weight: normal;
+        text-align: justify;
+        font-size: 13px;
+      }
+
+      span {
+        align-self: center;
+        position: relative;
+        margin: 0 1rem;
+      }
+
+      input {
+        -webkit-appearance: none;
+        appearance: none;
+        background-color: #fff;
+        margin: 0;
+        font: inherit;
+        color: currentColor;
+        width: 1.15em;
+        height: 1.15em;
+        border: 0.12em solid currentColor;
+        border-radius: 0.15em;
+        transform: translateY(-0.075em);
+        display: grid;
+        place-content: center;
+        cursor: pointer;
+      }
+
+      input::before {
+        content: "";
+        width: 0.65em;
+        height: 0.65em;
+        transform: scale(0);
+        transition: 120ms transform ease-in-out;
+        box-shadow: inset 1em 1em variables.$color1;
+      }
+
+      input:checked::before {
+        transform: scale(1);
+      }
+    }
+
+    select {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    label {
+      padding: 7px 0 0;
+      text-align: left;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 93%;
+      line-height: 2rem;
+      border: 0;
+      border-bottom: 2px solid #000;
+      outline: none;
+      background-color: #ddd;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-radius: 6px 6px 0 0;
+
+      &:placeholder-shown {
+        background-color: #fff;
+
+        &hover {
+          border-radius: 6px;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+
+  &--buttons {
+    flex-grow: 1;
+    position: absolute;
+    bottom: .5rem;
+
+    button {
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: variables.$color1;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+
+      &:hover {
+        background-color: rgba($color: variables.$color1, $alpha: .8);
+      }
+    }
+  }
+}

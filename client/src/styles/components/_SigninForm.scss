@@ -1,0 +1,74 @@
+@use "../mixins";
+@use "../variables";
+
+.divRight__form {
+  position: relative;
+  margin-top: 18rem;
+  /* top: 7.7rem; */
+  flex-grow: 7;
+  @include mixins.flexItem(column, wrap);
+
+  &--inputs {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+
+    label {
+      position: relative;
+      font-size: 17px;
+      font-weight: bold;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      position: relative;
+      width: 23rem;
+      height: 2rem;
+      line-height: 2rem;
+      border: 0;
+      border-bottom: 2px solid #000;
+      bottom: 1rem;
+      outline: none;
+      background-color: #ddd;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      border-radius: 6px 6px 0 0;
+
+      &:placeholder-shown {
+        background-color: #fff;
+
+        &hover {
+          border-radius: 6px;
+        }
+
+        &:hover,
+        &:focus {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+
+  &--buttons {
+    flex-grow: 1;
+    align-self: center;
+
+    button {
+      border-radius: 10px;
+      position: relative;
+      cursor: pointer;
+      background-color: variables.$color1;
+      border: none;
+      color: white;
+      padding: 16px 32px;
+      text-decoration: none;
+      margin: 4px 2px;
+
+      &:hover {
+        background-color: rgba($color: variables.$color1, $alpha: .8);
+      }
+    }
+  }
+}

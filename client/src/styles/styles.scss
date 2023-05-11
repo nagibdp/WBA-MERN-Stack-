@@ -1,0 +1,17 @@
+@import "./normalize.css";
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto&display=swap');
+//UI Settings
+
+//Components
+@import "./components/Navbar";
+@import "./components/SigninForm";
+@import "./components/SignupForm";
+@import "./components/Profile";
+@import "./components/Proyect";
+
+
+//Screens 
+@import "./pages/LoginPage";
+@import "./pages/HomePage";
+@import "./pages/ProfilePage";
+@import "./pages/ProyectPage";

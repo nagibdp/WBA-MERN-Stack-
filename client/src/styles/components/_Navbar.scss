@@ -1,0 +1,89 @@
+@use "../mixins";
+@use "../variables";
+
+body {
+  /* margin: 60px 0; */
+  font-family: Roboto;
+  background-color: variables.$color2;
+}
+
+.header__nav {
+  z-index: 500;
+  position: fixed;
+  background-color: #fff;
+  box-shadow: 0 0 3px 0px #444;
+  /* height: 50px; */
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: all 0.3s;
+
+  &.active {
+    background-color: #fff;
+    /* box-shadow: 0 0 0px 3px #444; */
+
+    a {
+      color: #000;
+    }
+
+    .header__container {
+      padding: 0px 0px;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all 0.3s;
+
+    .current,
+    &:hover {
+      color: #f00;
+      font-weight: bold;
+    }
+  }
+
+  .header__container {
+    position: relative;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s;
+    padding: 5px 0;
+
+    .header__logo {
+      position: relative;
+      height: 100%;
+      width: 50px;
+      left: 30px;
+
+      a {
+        position: absolute;
+        padding: 0 0;
+        height: 100%;
+        width: 100%;
+      }
+
+      .header__logo__img {
+        height: 100%;
+        width: 100%;
+        min-width: 100%;
+        min-height: 100%;
+      }
+    }
+  }
+}
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+}

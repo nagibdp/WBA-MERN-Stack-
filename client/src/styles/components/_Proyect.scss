@@ -1,0 +1,54 @@
+@use "../mixins";
+@use "../variables";
+
+.containerProyect {
+  background-color: #fff;
+  box-shadow: 11px 17px 20px 0px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  width: 35rem;
+  min-width: 15rem;
+  min-height: 20rem;
+  margin-bottom: 4rem;
+  border-radius: 2rem;
+
+  &__divLeft {
+    background-color: variables.$color1;
+    flex-grow: 3;
+    width: 4rem;
+    min-width: 4rem;
+    border-radius: 2rem 0 0 2rem;
+  }
+
+  &__divRight {
+    padding: 2rem 3rem 3rem 0;
+    flex-grow: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 4rem;
+    gap: 2rem;
+    &--text {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    &--buttons {
+      button {
+        border-radius: 10px;
+        position: relative;
+        cursor: pointer;
+        background-color: variables.$color1;
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        margin-right: .3rem;
+
+        &:hover {
+          background-color: variables.$color2;
+        }
+      }
+    }
+  }
+}
